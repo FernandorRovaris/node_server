@@ -6,6 +6,14 @@ exports.findAll = function () {
     
 }
 
+exports.findById = function (id) {
+        
+    return database.oneOrNone("Select *           " +
+                              "from doarse.users u " +
+                              "where u.id = $1", [id]);
+    
+}
+
 exports.insert = function (User) {
 
     return database.one("insert into doarse.users(name,email,senha,number_cel) values ($1, $2, $3, $4) returning *",

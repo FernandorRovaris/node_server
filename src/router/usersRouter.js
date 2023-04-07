@@ -5,7 +5,8 @@ const userController = require("../controllers/userController");
 
 //Chamar controller
 router.get("/users", userController.findAll);
-router.post("/users", userController.insert)
+router.get("/users/:id", userController.findById);
+router.post("/users", userController.insert);
 
 module.exports = router;
 

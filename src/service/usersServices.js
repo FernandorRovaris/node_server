@@ -6,6 +6,13 @@ exports.findAll = function () {
 
 }
 
+exports.findById = function (id) {
+    
+    return userRepositorie.findById(id);
+
+}
+
+
 exports.insert = function (User) {
 
     return userRepositorie.insert(User);
