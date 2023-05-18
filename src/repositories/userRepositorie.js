@@ -14,10 +14,18 @@ exports.findById = function (id) {
     
 }
 
+exports.findEmail = function (email) {
+        
+    return database.oneOrNone("Select *           " +
+                              "from doarse.users u " +
+                              "where u.email = $1", [email]);
+    
+}
+
 exports.insert = function (User) {
 
-    return database.one("insert into doarse.users(name,email,senha,number_cel) values ($1, $2, $3, $4) returning *",
-                        [User.name, User.email, User.senha, User.number_cel]) 
+    return database.one("insert into doarse.users(nome,sobrenome,celular,email,senha) values ($1, $2, $3, $4, $5) returning *",
+                        [User.nome, User.sobrenome, User.celular, User.email, User.senha]) 
 
     
 }

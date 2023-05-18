@@ -1,13 +1,19 @@
 class User{
 
     constructor(
-        name, email, senha, number_cel
+        nome,sobrenome, celular, email, senha, is_instuicao
     ){
-        this.name = name,
+        this.nome = nome,
+        this.sobrenome = sobrenome
+        this.celular = celular,
         this.email = email,
         this.senha = senha,
-        this.number_cel = number_cel
+        this.is_instuicao = is_instuicao        
     }
+
+
+
+
 
 }
 

@@ -2,6 +2,7 @@ const usersService = require("../service/usersServices")
 
 const User = require("../models/User");
 const ServerErro = require("../Error/serverError");
+const { json } = require("body-parser");
 
 exports.findAll = async function (req,res){
 
@@ -16,21 +17,19 @@ exports.findById = async function (req,res){
 
     const users = await usersService.findById(_id);
 
-    if(users == null || users == {}){
-        throw new ServerErro(400, "Usuario não encontrado");
-    }
-
     res.json(users);
 
 }
 
 exports.insert = async function (req, res) {
     
-    let user = new User(req.body.name, req.body.email, req.body.senha, req.body.number_cel);
- 
-    console.log(user);
+   let body = req.body;
+    
+   let user = new User(body.nome, body.sobrenome, body.celular, body.email, body.senha);
+   
+   const users = await usersService.insert(user);
 
-    const users = await usersService.insert(user);
+    print(req.body);
 
     res.json(users); 
 
