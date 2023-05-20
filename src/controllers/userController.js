@@ -24,12 +24,14 @@ exports.findById = async function (req,res){
 exports.insert = async function (req, res) {
     
    let body = req.body;
-    
+   
+   console.log(req.body);
+
    let user = new User(body.nome, body.sobrenome, body.celular, body.email, body.senha);
    
    const users = await usersService.insert(user);
 
-    res.json(users); 
+   res.json(users); 
 
 }
 
