@@ -29,8 +29,6 @@ exports.insert = async function (req, res) {
    
    const users = await usersService.insert(user);
 
-    print(req.body);
-
     res.json(users); 
 
 }
