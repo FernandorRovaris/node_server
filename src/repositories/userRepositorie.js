@@ -24,7 +24,7 @@ exports.findEmail = function (email) {
 
 exports.insert = function (User) {
 
-    return database.one("insert into doarse.users(nome,sobrenome,celular,email,senha) values ($1, $2, $3, $4, $5) returning *",
+    return database.oneOrNone("insert into doarse.users(nome,sobrenome,celular,email,senha) values ($1, $2, $3, $4, $5) returning *",
                         [User.nome, User.sobrenome, User.celular, User.email, User.senha]) 
 
     
