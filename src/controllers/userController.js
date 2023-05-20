@@ -25,13 +25,22 @@ exports.insert = async function (req, res) {
     
    let body = req.body;
    
-   console.log(req.body);
-
-   let user = new User(body.nome, body.sobrenome, body.celular, body.email, body.senha);
+   let user = new User(null, body.nome, body.sobrenome, body.celular, body.email, body.senha, body.is_instituicao);
    
    const users = await usersService.insert(user);
 
    res.json(users); 
+
+}
+
+exports.auth = async function (req, res) {
+    
+    let _email = req.query.email;
+    let _senha = req.query.senha;
+   
+    const user = await usersService.findEmailSenha(_email, _senha);
+
+    res.json(user); 
 
 }
 

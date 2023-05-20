@@ -39,12 +39,32 @@ exports.findEmail = async function (email){
 
 exports.insert = async function (user) {
 
-    const  obj = await userRepositorie.findEmail(user.email);
+    const obj = await userRepositorie.findEmail(user.email);
 
     if (obj != null){
         throw new ServerErro(400, "Já existe usuario cadastrado com este email")
     }
+   
+    const newobj =  await userRepositorie.insert(user);
 
-    return userRepositorie.insert(user);
+    const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.is_instituicao);
+
+    return newUser;
     
+}
+
+exports.findEmailSenha = async function (email, senha){
+
+    const obj = await userRepositorie.findEmailSenha(email, senha);
+
+    console.log(obj.nome,obj.sobrenome,obj.celular,obj.email);
+
+    if (obj == null || obj == {}){
+        throw new ServerErro(404, "Usuario não encontrado");
+    }
+
+    const user = new User(obj.nome,obj.sobrenome,obj.celular,obj.email);
+
+    return user;
+
 }
