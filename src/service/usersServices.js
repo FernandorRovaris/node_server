@@ -41,10 +41,8 @@ exports.insert = async function (user) {
 
     const  obj = await userRepositorie.findEmail(user.email);
 
-    console.log(obj);
-
     if (obj != null){
-        throw new ServerErro(400, "Já existe usuario com este email")
+        throw new ServerErro(400, "Já existe usuario cadastrado com este email")
     }
 
     return userRepositorie.insert(user);
