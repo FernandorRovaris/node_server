@@ -32,7 +32,7 @@ exports.insert = function (User) {
 
 exports.findEmailSenha = function (email, senha) {
       
-    return database.one("Select *               " +
+    return database.oneOrNone("Select *               " +
                               "from doarse.users u    " +
                               "where u.email = $1 and " +
                                "     u.senha = $2", [email, senha]);
