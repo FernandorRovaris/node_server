@@ -57,13 +57,11 @@ exports.findEmailSenha = async function (email, senha){
 
     const obj = await userRepositorie.findEmailSenha(email, senha);
 
-    console.log(obj.nome,obj.sobrenome,obj.celular,obj.email);
-
     if (obj == null || obj == {}){
         throw new ServerErro(404, "Usuario não encontrado");
     }
 
-    const user = new User(obj.nome,obj.sobrenome,obj.celular,obj.email);
+    const user = new User(obj.id, obj.nome,obj.sobrenome,obj.celular,obj.email, null, obj.is_instituicao);
 
     return user;
 

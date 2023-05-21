@@ -32,8 +32,6 @@ exports.insert = function (User) {
 
 exports.findEmailSenha = function (email, senha) {
       
-    console.log(email, senha);
-
     return database.one("Select *               " +
                               "from doarse.users u    " +
                               "where u.email = $1 and " +
