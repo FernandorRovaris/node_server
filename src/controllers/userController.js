@@ -35,6 +35,8 @@ exports.insert = async function (req, res) {
 
 exports.auth = async function (req, res) {
     
+    console.log(req);
+
     let _email = req.query.email;
     let _senha = req.query.senha;
    
