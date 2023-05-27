@@ -7,6 +7,7 @@ exports.findAll = function () {
                           "       c.id as id_cit,        " +
                           "       c.nome as nome_cit     " +
                           "from doarse.estados e         " +
-                          "left join doarse.cidades c on c.estado_id = e.id" );
+                          "left join doarse.cidades c on c.estado_id = e.id " +
+                          "order by e.id" );
     
 }
