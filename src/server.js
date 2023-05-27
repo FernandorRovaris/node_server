@@ -4,12 +4,14 @@ const express = require("express");
 const ServerErro = require('./Error/serverError');
 
 const userRouter = require("./router/usersRouter");
+const estadoRouter = require("./router/estadosRouter");
 
 
 const app = express();
 app.use(express.json());
 
 app.use(userRouter);
+app.use(estadoRouter);
 
 app.use((err, req, res, next) =>{
     console.error(err);

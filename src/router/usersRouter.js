@@ -8,7 +8,7 @@ router.get("/users", userController.findAll);
 router.get("/users/:id", userController.findById);
 router.post("/users", userController.insert);
 router.get("/auth", userController.auth);
-router.get("estados", estadoController.findAll);
+router.get("/estados", estadoController.findAll);
 
 module.exports = router;
 
