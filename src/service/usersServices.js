@@ -1,9 +1,9 @@
 const ServerErro = require("../Error/serverError");
-const User = require("../models/User");
+const User = require("../models/user");
 const userRepositorie = require("../repositories/userRepositorie");
 
 exports.findAll = function () {
-    
+    console.log("aqui");
     return userRepositorie.findAll();
 
 }

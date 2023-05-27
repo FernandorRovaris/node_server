@@ -1,11 +1,10 @@
 const usersService = require("../service/usersServices")
 
-const User = require("../models/User");
-const ServerErro = require("../Error/serverError");
-const { json } = require("body-parser");
+const User = require("../models/user");
 
 exports.findAll = async function (req,res){
 
+    
     const users = await usersService.findAll();
     res.json(users);
 
