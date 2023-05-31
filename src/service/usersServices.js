@@ -60,8 +60,19 @@ exports.insert = async function (user) {
     console.log(user);
     const newobj =  await userRepositorie.insert(user);
 
-    const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.estadoId, newobj.cidadeId, newobj.cep,newobj.numero,newobj.endereco, newobj.isInstituicao,newobj.fileImage);
-
+    const newUser = new User(newobj.id,
+                            newobj.nome,
+                            newobj.sobrenome,
+                            newobj.celular,
+                            newobj.email, 
+                            null, 
+                            newobj.estadoid, 
+                            newobj.cidadeid, 
+                            newobj.cep,
+                            newobj.numero,
+                            newobj.endereco, 
+                            newobj.is_instituicao,
+                            newobj.fileimage);
     return newUser;
     
 }
