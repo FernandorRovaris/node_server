@@ -15,8 +15,20 @@ exports.findById = async function (id) {
     if (newobj == null || newobj == {}){
         throw new ServerErro(400, "Usuario não encontrado");
     }
-
-    const user = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.estadoId, newobj.cidadeId, newobj.cep,newobj.numero,newobj.endereco, newobj.isInstituicao,newobj.fileImage);
+    console.log(newobj);
+    const user = new User(newobj.id,
+                          newobj.nome,
+                          newobj.sobrenome,
+                          newobj.celular,
+                          newobj.email, 
+                          null, 
+                          newobj.estadoId, 
+                          newobj.cidadeId, 
+                          newobj.cep,
+                          newobj.numero,
+                          newobj.endereco, 
+                          newobj.isInstituicao,
+                          newobj.fileImage);
 
     return user;
 
