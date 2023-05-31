@@ -22,13 +22,13 @@ exports.findById = async function (id) {
                           newobj.celular,
                           newobj.email, 
                           null, 
-                          newobj.estadoId, 
-                          newobj.cidadeId, 
+                          newobj.estadoid, 
+                          newobj.cidadeid, 
                           newobj.cep,
                           newobj.numero,
                           newobj.endereco, 
-                          newobj.isInstituicao,
-                          newobj.fileImage);
+                          newobj.is_instituicao,
+                          newobj.fileimage);
 
     return user;
 
