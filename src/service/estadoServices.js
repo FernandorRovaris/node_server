@@ -22,6 +22,6 @@ exports.findAll = async function () {
         return lista != null;
     });
 
-    console.log(a);
+    
       return a;
 }
