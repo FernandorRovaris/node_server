@@ -10,13 +10,13 @@ exports.findAll = function () {
 
 exports.findById = async function (id) {
     
-    const obj = await userRepositorie.findById(id);
+    const newobj = await userRepositorie.findById(id);
 
-    if (obj == null || obj == {}){
+    if (newobj == null || newobj == {}){
         throw new ServerErro(400, "Usuario não encontrado");
     }
 
-    const user = new User(obj.nome,obj.sobrenome,obj.celular,obj.email);
+    const user = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.estadoId, newobj.cidadeId, newobj.cep,newobj.numero,newobj.endereco, newobj.isInstituicao,newobj.fileImage);
 
     return user;
 
@@ -48,7 +48,7 @@ exports.insert = async function (user) {
     console.log(user);
     const newobj =  await userRepositorie.insert(user);
 
-    const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.isInstituicao);
+    const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.estadoId, newobj.cidadeId, newobj.cep,newobj.numero,newobj.endereco, newobj.isInstituicao,newobj.fileImage);
 
     return newUser;
     
