@@ -34,7 +34,8 @@ exports.insert = async function (req, res) {
                              body.cep, 
                              body.numero, 
                              body.endereco, 
-                             body.isInstituicao);
+                             body.isInstituicao,
+                             body.fileImage);
    
    const users = await usersService.insert(user);
 
