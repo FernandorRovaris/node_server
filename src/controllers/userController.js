@@ -34,7 +34,7 @@ exports.insert = async function (req, res) {
                              body.cep, 
                              body.numero, 
                              body.endereco, 
-                             body.is_instituicao);
+                             body.isInstituicao);
    
    const users = await usersService.insert(user);
 

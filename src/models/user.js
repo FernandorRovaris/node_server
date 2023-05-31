@@ -1,7 +1,7 @@
 class User{
 
     constructor(
-       id, nome, sobrenome, celular, email, senha, estadoId, cidadeId, cep, numero, endereco, is_instituicao
+       id, nome, sobrenome, celular, email, senha, estadoId, cidadeId, cep, numero, endereco, isInstituicao
     ){
         this.id = id,
         this.nome = nome,
@@ -14,7 +14,7 @@ class User{
         this.cep = cep,
         this.numero = numero,
         this. endereco = endereco,
-        this.is_instituicao = is_instituicao        
+        this.isInstituicao = isInstituicao        
     }
 
 }

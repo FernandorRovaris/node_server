@@ -48,7 +48,7 @@ exports.insert = async function (user) {
     console.log(user);
     const newobj =  await userRepositorie.insert(user);
 
-    const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.is_instituicao);
+    const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.isInstituicao);
 
     return newUser;
     
