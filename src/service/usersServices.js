@@ -44,7 +44,8 @@ exports.insert = async function (user) {
     if (obj != null){
         throw new ServerErro(400, "Já existe usuario cadastrado com este email")
     }
-   
+    
+    console.log(user);
     const newobj =  await userRepositorie.insert(user);
 
     const newUser = new User(newobj.id,newobj.nome,newobj.sobrenome,newobj.celular,newobj.email, null, newobj.is_instituicao);

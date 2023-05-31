@@ -24,7 +24,17 @@ exports.insert = async function (req, res) {
     
    let body = req.body;
    
-   let user = new User(null, body.nome, body.sobrenome, body.celular, body.email, body.senha, body.is_instituicao);
+   let user = new User(null, body.nome, 
+                             body.sobrenome, 
+                             body.celular, 
+                             body.email, 
+                             body.senha,
+                             body.estadoId, 
+                             body.cidadeId, 
+                             body.cep, 
+                             body.numero, 
+                             body.endereco, 
+                             body.is_instituicao);
    
    const users = await usersService.insert(user);
 
