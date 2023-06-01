@@ -57,10 +57,7 @@ exports.insert = async function (user) {
         throw new ServerErro(400, "Já existe usuario cadastrado com este email")
     }
     
-    console.log(user);
     const newobj =  await userRepositorie.insert(user);
-
-    console.log(newobj);
 
     const imagefile = Buffer.from(newobj.fileimage).toString('base64');
 
@@ -91,6 +88,10 @@ exports.findEmailSenha = async function (email, senha){
         throw new ServerErro(404, "Usuario não encontrado");
     }
 
+    const imagefile = Buffer.from(newobj.fileimage).toString('base64');
+
+    const buffer = Buffer.from(imagefile, 'base64');
+
     const user = new  User(newobj.id,
                             newobj.nome,
                             newobj.sobrenome,
@@ -103,7 +104,7 @@ exports.findEmailSenha = async function (email, senha){
                             newobj.numero,
                             newobj.endereco, 
                             newobj.is_instituicao,
-                            Buffer.from(newobj.fileimage).toString('base64'));
+                            buffer.toString('utf-8'));
 
     return user;
 
