@@ -61,6 +61,11 @@ exports.insert = async function (user) {
     const newobj =  await userRepositorie.insert(user);
 
     console.log(newobj);
+
+    const imagefile = Buffer.from(newobj.fileimage).toString('base64');
+
+    const buffer = Buffer.from(imagefile, 'base64');
+
     const newUser = new User(newobj.id,
                             newobj.nome,
                             newobj.sobrenome,
@@ -73,7 +78,7 @@ exports.insert = async function (user) {
                             newobj.numero,
                             newobj.endereco, 
                             newobj.is_instituicao,
-                            Buffer.from(newobj.fileimage).toString('base64'));
+                            buffer.toString('utf-8'));
     return newUser;
     
 }
