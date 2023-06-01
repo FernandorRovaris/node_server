@@ -85,7 +85,19 @@ exports.findEmailSenha = async function (email, senha){
         throw new ServerErro(404, "Usuario não encontrado");
     }
 
-    const user = new User(obj.id, obj.nome,obj.sobrenome,obj.celular,obj.email, null, obj.is_instituicao);
+    const user = new  User(newobj.id,
+                            newobj.nome,
+                            newobj.sobrenome,
+                            newobj.celular,
+                            newobj.email, 
+                            null, 
+                            newobj.estadoid, 
+                            newobj.cidadeid, 
+                            newobj.cep,
+                            newobj.numero,
+                            newobj.endereco, 
+                            newobj.is_instituicao,
+                            newobj.fileimage.toString('base64'));
 
     return user;
 
