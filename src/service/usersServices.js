@@ -60,7 +60,7 @@ exports.insert = async function (user) {
     console.log(user);
     const newobj =  await userRepositorie.insert(user);
 
-    console.log(newUser);
+    console.log(newobj);
     const newUser = new User(newobj.id,
                             newobj.nome,
                             newobj.sobrenome,
