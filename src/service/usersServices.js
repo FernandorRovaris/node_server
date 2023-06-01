@@ -85,6 +85,13 @@ exports.findEmailSenha = async function (email, senha){
         throw new ServerErro(404, "Usuario não encontrado");
     }
 
+
+    console.log(newobj);
+
+    console.log(newobj.fileimage);
+
+    console.log(newobj.fileimage.data);
+
     const user = new  User(newobj.id,
                             newobj.nome,
                             newobj.sobrenome,
