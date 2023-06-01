@@ -60,6 +60,7 @@ exports.insert = async function (user) {
     console.log(user);
     const newobj =  await userRepositorie.insert(user);
 
+    console.log(newUser);
     const newUser = new User(newobj.id,
                             newobj.nome,
                             newobj.sobrenome,
@@ -72,7 +73,7 @@ exports.insert = async function (user) {
                             newobj.numero,
                             newobj.endereco, 
                             newobj.is_instituicao,
-                            newobj.fileimage);
+                            Buffer.from(newobj.fileimage).toString('base64'));
     return newUser;
     
 }
@@ -84,13 +85,6 @@ exports.findEmailSenha = async function (email, senha){
     if (newobj == null || newobj == {}){
         throw new ServerErro(404, "Usuario não encontrado");
     }
-
-
-    console.log(newobj);
-
-    console.log(newobj.fileimage);
-
-    console.log(newobj.fileimage.data);
 
     const user = new  User(newobj.id,
                             newobj.nome,
