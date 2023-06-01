@@ -97,7 +97,7 @@ exports.findEmailSenha = async function (email, senha){
                             newobj.numero,
                             newobj.endereco, 
                             newobj.is_instituicao,
-                            newobj.fileimage);
+                            Buffer.from(newobj.fileimage.data).toString('base64'));
 
     return user;
 
