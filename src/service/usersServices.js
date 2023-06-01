@@ -79,9 +79,9 @@ exports.insert = async function (user) {
 
 exports.findEmailSenha = async function (email, senha){
 
-    const obj = await userRepositorie.findEmailSenha(email, senha);
+    const newobj = await userRepositorie.findEmailSenha(email, senha);
 
-    if (obj == null || obj == {}){
+    if (newobj == null || newobj == {}){
         throw new ServerErro(404, "Usuario não encontrado");
     }
 
