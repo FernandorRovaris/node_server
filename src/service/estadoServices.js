@@ -30,9 +30,13 @@ exports.findbyId = async function(id){
 
     const result = await estadoRepositorie.findbyId(id);
 
+    console.log(result);
+
     if (result == null || result == {}){
         throw new ServerErro(404, "Estado não encontrado");
     }
-       return new Estados(result.id_est, result.nome_est);
+       const estado = new Estados(result.id_est, result.nome_est);
+
+       return estado;
     
 }
