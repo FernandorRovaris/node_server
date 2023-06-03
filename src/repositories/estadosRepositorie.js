@@ -12,7 +12,7 @@ exports.findAll = function () {
     
 }
 
-exports.findAll = function (id) {
+exports.findbyId = function (id) {
         
     return database.query("select e.id as id_est,        " +
                           "       e.nome as nome_est,    " +

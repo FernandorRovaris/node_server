@@ -7,11 +7,11 @@ exports.findAll = async function (req,res){
 
 }
 
-exports.findbyID = async function (req,res){
+exports.findbyId = async function (req,res){
 
     let _id = req.params.id;
 
-    const estado = await estadoService.findbyID(_id);
+    const estado = await estadoService.findbyId(_id);
     res.json(estado);
 
 }

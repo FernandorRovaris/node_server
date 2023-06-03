@@ -26,9 +26,9 @@ exports.findAll = async function () {
       return a;
 }
 
-exports.findbyID = async function(id){
+exports.findbyId = async function(id){
 
-    const result = await estadoRepositorie.findbyID(id);
+    const result = await estadoRepositorie.findbyId(id);
 
     if (result == null || result == {}){
         throw new ServerErro(404, "Estado não encontrado");
