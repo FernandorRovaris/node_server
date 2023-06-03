@@ -68,7 +68,7 @@ exports.insert = async function (user) {
         throw new ServerErro(400, "Já existe usuario cadastrado com este email")
     }    
     
-    const newobj = userRepositorie.insert(user);
+    const newobj =  await userRepositorie.insert(user);
 
     let imagebase64;
 
