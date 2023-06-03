@@ -6,3 +6,12 @@ exports.findAll = async function (req,res){
     res.json(estado);
 
 }
+
+exports.findbyID = async function (req,res){
+
+    let _id = req.params.id;
+
+    const estado = await estadoService.findbyID(_id);
+    res.json(estado);
+
+}
