@@ -1,7 +1,7 @@
 class Cidade{
-
+    
     constructor(
-       id, nome,estado
+       id, nome, estado
        ){
         this.id = id,
         this.nome = nome

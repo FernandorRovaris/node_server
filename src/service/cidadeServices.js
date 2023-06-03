@@ -27,8 +27,8 @@ exports.findbyId = async function(id){
     if (result == null || result == {}){
         throw new ServerErro(404, "Estado não encontrado");
     }
-    estado = new Estados(obj.id_est, obj.nome_est);
-    cidade = new Cidade(obj.id_cit, obj.nome_cit, estado);
+    estado = new Estados(result.id_est, result.nome_est);
+    cidade = new Cidade(result.id_cit, result.nome_cit, estado);
 
        return cidade;
     
