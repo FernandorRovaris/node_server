@@ -9,6 +9,8 @@ exports.findAll = async function (req,res){
 
 exports.findbyId = async function (req,res){
 
+    console.log("aqui");
+
     let _id = req.params.id;
 
     const cidade = await cidadeServices.findbyId(_id);
