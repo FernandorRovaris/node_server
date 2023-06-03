@@ -33,6 +33,6 @@ exports.findbyId = async function(id){
     if (result == null || result == {}){
         throw new ServerErro(404, "Estado não encontrado");
     }
-       return Estados(result.id_est, result.nome_est);
+       return new Estados(result.id_est, result.nome_est);
     
 }
