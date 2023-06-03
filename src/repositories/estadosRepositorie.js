@@ -14,7 +14,7 @@ exports.findAll = function () {
 
 exports.findbyId = function (id) {
         
-    return database.query("select e.id as id_est,        " +
+    return database.oneOrNone("select e.id as id_est,        " +
                           "       e.nome as nome_est    " +
                           "from doarse.estados e         " +
                           "where e.id = $1",[id] );
