@@ -7,8 +7,7 @@ exports.insert = async function (req, res) {
     
    let body = req.body;
    
-   let campanha = new Campanha(null, 
-                                body.id,
+   let campanha = new Campanha( body.id,
                                 body.users.id,
                                 body.titulo,
                                 body.categoria,
