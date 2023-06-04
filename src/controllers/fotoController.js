@@ -7,9 +7,7 @@ exports.insert = async function (req, res) {
     
    let body = req.body;
    
-   console.log(body);
-
-   let campanha = new Foto(body.campanhaId,
+   let campanha = new Foto(req.params.id,
                            body.foto);
    
    const newcampanha = await fotoService.insert(campanha);
