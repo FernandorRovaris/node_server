@@ -7,7 +7,7 @@ exports.insert = async function (foto) {
 
     let imagebase64;
 
-    if (newobj.fileimage != null) {
+    if (newobj.foto != null) {
         const imagefile = Buffer.from(newobj.foto).toString('base64');
 
         const buffer = Buffer.from(imagefile, 'base64');
