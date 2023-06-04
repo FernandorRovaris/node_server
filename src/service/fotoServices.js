@@ -1,10 +1,10 @@
 const fotoRepositorie = require("../repositories/fotosRepositorie");
 const Foto = require("../models/fotosCampanhas");
 
-exports.insert = async function (fotos) {
+exports.insert = async function (id, fotos) {
 
     for (const foto in fotos) {
-        await fotoRepositorie.insert(foto);
+        await fotoRepositorie.insert(id, foto);
     }    
     
 }
