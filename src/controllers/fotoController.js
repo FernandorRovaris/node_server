@@ -5,8 +5,6 @@ const Foto = require("../models/fotosCampanhas");
 
 exports.insert = async function (req, res) {
    
-   console.log(req.params.id);
-   
    let body = req.body;
    
    let campanha = new Foto(null,

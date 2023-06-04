@@ -80,9 +80,6 @@ exports.insert = async function (user) {
         imagebase64 = buffer.toString('utf-8')
     }
 
-    console.log("aqui");
-    console.log(newobj);
-
     const newUser = new User(newobj.id,
                             newobj.nome,
                             newobj.sobrenome,
