@@ -14,7 +14,8 @@ exports.insert = async function (campanha) {
                                 newobj.categoria,
                                 newobj.item_desc, 
                                 newobj.item_meta, 
-                                newobj.descricao
+                                newobj.descricao,
+                                newobj.is_coleta
                             );
     return newCampanha;
     

@@ -15,7 +15,8 @@ exports.insert = async function (req, res) {
                                 body.categoria,
                                 body.item_desc, 
                                 body.item_meta, 
-                                body.descricao);
+                                body.descricao,
+                                body.is_coleta);
    
    const newcampanha = await campanhaService.insert(campanha);
 

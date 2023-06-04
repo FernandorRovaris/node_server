@@ -1,7 +1,7 @@
 class Campanha{
 
     constructor(
-       id, users_id, titulo, categoria, item_desc, item_meta, descricao
+       id, users_id, titulo, categoria, item_desc, item_meta, descricao, is_coleta
     ){
         this.id = id,
         this.users_id = users_id,
@@ -9,7 +9,8 @@ class Campanha{
         this.categoria = categoria,
         this.item_desc = item_desc,
         this.item_meta = item_meta,
-        this.descricao = descricao        
+        this.descricao = descricao,
+        this.is_coleta = is_coleta
     }
 
 }
