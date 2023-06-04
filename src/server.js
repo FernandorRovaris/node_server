@@ -6,7 +6,7 @@ const ServerErro = require('./Error/serverError');
 const userRouter = require("./router/usersRouter");
 const estadoRouter = require("./router/estadosRouter");
 const cidadeRouter = require("./router/cidadeRouter");
-const campanhas  = require("./router/campanhaRouter")
+const campanhas  = require("./router/campanhaRouter");
 
 const app = express();
 app.use(express.json({limit: '50mb'}));
