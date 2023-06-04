@@ -9,7 +9,7 @@ exports.insert = async function (campanha) {
     console.log(newobj);
 
     const newCampanha = new Campanha(newobj.id,
-                                newobj.users.id,
+                                newobj.users_id,
                                 newobj.titulo,
                                 newobj.categoria,
                                 newobj.item_desc, 

@@ -10,7 +10,7 @@ exports.insert = async function (req, res) {
    console.log(body);
 
    let campanha = new Campanha( body.id,
-                                body.users.id,
+                                body.users_id,
                                 body.titulo,
                                 body.categoria,
                                 body.item_desc, 
