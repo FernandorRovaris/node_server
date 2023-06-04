@@ -14,4 +14,4 @@ class Campanha{
 
 }
 
-module.exports = User;
+module.exports = Campanha;
