@@ -16,8 +16,8 @@ exports.insert = async function (foto) {
     }
 
     const newUser = new Foto(newobj.id,
-                            newobj.campanhaId,
-                            newobj.imagebase64);
+                            newobj.campanha_id,
+                            imagebase64);
     return newUser;
     
 }
