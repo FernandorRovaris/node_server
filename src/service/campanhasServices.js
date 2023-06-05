@@ -29,7 +29,7 @@ exports.findAll = async function(){
     var id
     a = result.map(function(obj) {
         
-        if (id != obj.id_est){
+        if (id != obj.id){
             campanha = new Campanha(obj.id, obj.users_id, obj.titulo, obj.categoria, obj.item_desc, obj.item_meta, obj.descricao, obj.is_coleta);
             id = obj.id;
             return campanha;
