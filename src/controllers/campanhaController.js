@@ -28,6 +28,6 @@ exports.findAll =  async function (req, res){
 
    const campanhas = await campanhaService.findAll();
    
-   res.json()
+   res.json(campanhas)
 
 }
