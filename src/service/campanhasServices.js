@@ -44,6 +44,4 @@ exports.findAll = async function(){
     
       return a;
 
-    return Campanha();
-
 }
