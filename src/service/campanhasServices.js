@@ -29,12 +29,6 @@ exports.findAll = async function(){
     var id
     a = result.map(function(obj) {
         
-        if (id != obj.id){
-            campanha = new Campanha(obj.id, obj.users_id, obj.titulo, obj.categoria, obj.item_desc, obj.item_meta, obj.descricao, obj.is_coleta);
-            id = obj.id;
-            return campanha;
-        }
-        
         let imagebase64;
 
         if (obj.foto != null) {
@@ -42,11 +36,24 @@ exports.findAll = async function(){
 
             const buffer = Buffer.from(imagefile, 'base64');
         
-            imagebase64 = buffer.toString('utf-8')
+            imagebase64 = buffer.toString('utf-8');
+
+            foto = new FotosCampanha(obj.id_foto, obj.id, imagebase64);
+        }
+       
+        if (id != obj.id){
+            id = obj.id;
+            campanha = new Campanha(obj.id, obj.users_id, obj.titulo, obj.categoria, obj.item_desc, obj.item_meta, obj.descricao, obj.is_coleta);
+            campanha.addfoto(foto);
+            return campanha;
+        }else{
+            campanha.addfoto(foto);
         }
         
-        foto = new FotosCampanha(obj.id_foto, obj.id, imagebase64);
-        campanha.addfoto(foto);
+        
+        
+        
+        
         
     }).filter(function(lista) {
         return lista != null;
