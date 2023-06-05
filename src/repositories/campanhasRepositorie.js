@@ -9,3 +9,11 @@ exports.insert = function (campanha) {
     
 }
 
+exports.findAll = function (){
+
+    return database.query("Select c.id, c.users_id, c.titulo, c.categoria, c.item_desc, c.item_meta, c.descricao, c.is_coleta, f.id as id_foto, f.foto "+
+                          "from doarse.campanhas c                          "+
+                          "left join doarse.fotos f on f.campanha_id = c.id "+
+                          "order by c.id ,f.id; ");
+
+}

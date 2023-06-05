@@ -23,3 +23,11 @@ exports.insert = async function (req, res) {
    res.json(newcampanha); 
 
 }
+
+exports.findAll =  async function (req, res){
+
+   const campanhas = await campanhaService.findAll();
+   
+   res.json()
+
+}

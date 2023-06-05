@@ -1,5 +1,7 @@
 class Campanha{
 
+     listFotos = [];
+
     constructor(
        id, users_id, titulo, categoria, item_desc, item_meta, descricao, is_coleta
     ){
@@ -12,6 +14,10 @@ class Campanha{
         this.descricao = descricao,
         this.is_coleta = is_coleta
     }
+
+    addfoto(elemento) {
+        this.listFotos.push(elemento);
+    };
 
 }
 

@@ -5,6 +5,7 @@ const fotosController = require("../controllers/fotoController");
 
 router.post("/campanha", campanhaController.insert);
 router.post("/campanha/:id/fotos", fotosController.insert);
+router.get("/campanha", campanhaController.findAll);
 
 module.exports = router;
 

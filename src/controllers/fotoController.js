@@ -12,3 +12,4 @@ exports.insert = async function (req, res) {
    res.json(newcampanha); 
 
 }
+
