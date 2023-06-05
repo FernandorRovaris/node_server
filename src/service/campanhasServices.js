@@ -34,7 +34,18 @@ exports.findAll = async function(){
             id = obj.id;
             return campanha;
         }
-        foto = new FotosCampanha(obj.id_foto, obj.id, obj.foto);
+        
+        let imagebase64;
+
+        if (obj.foto != null) {
+            const imagefile = Buffer.from(obj.foto).toString('base64');
+
+            const buffer = Buffer.from(imagefile, 'base64');
+        
+            imagebase64 = buffer.toString('utf-8')
+        }
+        
+        foto = new FotosCampanha(obj.id_foto, obj.id, imagebase64);
         campanha.addfoto(foto);
         
     }).filter(function(lista) {

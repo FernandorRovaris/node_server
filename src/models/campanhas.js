@@ -1,6 +1,14 @@
 class Campanha{
 
-     listFotos = [];
+    id;
+    users_id; 
+    titulo; 
+    categoria; 
+    item_desc; 
+    item_meta; 
+    descricao; 
+    is_coleta;
+    listFotos = [];
 
     constructor(
        id, users_id, titulo, categoria, item_desc, item_meta, descricao, is_coleta
