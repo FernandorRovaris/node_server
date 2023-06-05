@@ -50,16 +50,10 @@ exports.findAll = async function(){
             campanha.addfoto(foto);
         }
         
-        
-        
-        
-        
-        
     }).filter(function(lista) {
         return lista != null;
     });
-
     
-      return a;
+    return a;
 
 }
