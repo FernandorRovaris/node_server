@@ -22,7 +22,7 @@ class Campanha{
         this.item_meta = item_meta,
         this.descricao = descricao,
         this.is_coleta = is_coleta,
-        this.user
+        this.user = user
     }
 
     addfoto(elemento) {
