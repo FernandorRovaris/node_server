@@ -11,8 +11,9 @@ exports.insert = function (campanha) {
 
 exports.findAll = function (){
 
-    return database.query("Select c.id, c.users_id, c.titulo, c.categoria, c.item_desc, c.item_meta, c.descricao, c.is_coleta, f.id as id_foto, f.foto "+
+    return database.query("Select u.id as user_id, u.nome, u.email, u.celular, u.cep, u.numero, u.endereco, u.cidadeId, u.estadoId, u.is_instituicao, c.id, c.users_id, c.titulo, c.categoria, c.item_desc, c.item_meta, c.descricao, c.is_coleta, f.id as id_foto, f.foto "+
                           "from doarse.campanhas c                          "+
+                          "left join doarse.users u on u.id = c.users_id    "+
                           "left join doarse.fotos f on f.campanha_id = c.id "+
                           "order by c.id ,f.id; ");
 
