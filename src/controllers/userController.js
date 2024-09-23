@@ -6,6 +6,8 @@ exports.findAll = async function (req,res){
 
     
     const users = await usersService.findAll();
+   
+
     res.json(users);
 
 }

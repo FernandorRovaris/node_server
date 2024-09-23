@@ -2,7 +2,7 @@ const database = require("../infra/database");
 
 exports.findAll = function () {
     console.log("1");
-    return database.query("Select * from doarse.users");
+    return "teste"//database.query("Select * from doarse.users");
         
 }
 

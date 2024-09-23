@@ -1,5 +1,5 @@
 {
-  "name": "node_server",
+  "name": "server",
   "version": "1.0.0",
   "description": "Projeto de TCC",
   "main": "index.js",
