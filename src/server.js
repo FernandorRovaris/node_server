@@ -18,6 +18,8 @@ app.use(cidadeRouter);
 app.use(campanhas)
 
 app.use((err, req, res, next) =>{
+    console.log(req);
+    
     console.error(err);
     if (err instanceof ServerErro) {
         res.status(err.statusCode).json(err);    

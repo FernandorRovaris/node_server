@@ -62,7 +62,7 @@ exports.findEmail = async function (email){
 
 exports.insert = async function (user) {
 
-    const obj = await userRepositorie.findEmail(user.email);
+   /* const obj = await userRepositorie.findEmail(user.email);
 
     if (obj != null){
         throw new ServerErro(400, "Já existe usuario cadastrado com este email")
@@ -92,8 +92,8 @@ exports.insert = async function (user) {
                             newobj.numero,
                             newobj.endereco, 
                             newobj.is_instituicao,
-                            imagebase64);
-    return newUser;
+                            imagebase64);*/
+    return "teste" //newUser;
     
 }
 
