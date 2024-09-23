@@ -23,9 +23,12 @@ exports.findById = async function (req,res){
 }
 
 exports.insert = async function (req, res) {
-    
+   
    let body = req.body;
    
+    console.log(body);
+    
+
    let user = new User(null, body.nome, 
                              body.sobrenome, 
                              body.celular, 
